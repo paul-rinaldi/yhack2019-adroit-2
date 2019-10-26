@@ -1,0 +1,20 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.progressBar {
+    width: 500px;
+    height: 50px;
+    background: #FDE9EC;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.currentProgress {
+    height: inherit;
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);;
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
