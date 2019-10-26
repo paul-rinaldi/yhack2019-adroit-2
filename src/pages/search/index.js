@@ -8,6 +8,7 @@ const SearchPage = () => {
     });
     const handleChange = name => event => {
         setValues({ ...values, [name]: event.target.value });
+        
         console.log(values);
     };
     return (
@@ -16,7 +17,7 @@ const SearchPage = () => {
             <form onSubmit={(value) => handleChange('search')}>
                 <div class="tb">
                 <div class="td">
-                    <input type="text" placeholder="Jetblue" value="values.search" required />
+                    <input type="text" placeholder="Jetblue" value="Jetblue" required />
                 </div>
                 <div class="td" id="s-cover">
                     <button type="submit">
@@ -28,15 +29,6 @@ const SearchPage = () => {
             </form>
             </div>
             <form>
-            <TextField 
-                id="filled-search"
-                label="Find negative sentiments about... "
-                value={values.search}
-                onChange={handleChange('search')}
-                margin="normal"
-                variant="filled"
-                style={style}
-            />
             </form>
         </div>
     ); 
