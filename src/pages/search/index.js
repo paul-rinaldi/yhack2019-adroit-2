@@ -7,10 +7,7 @@ import { fetchResultsAsync } from '../../components/firebase/firebase.util';
 const SearchPage = ({ history }) => {
   const [searchQuery, setSearchQuery] = useState('Jetblue');
   // const [redirect, setRedirect]
-
-  const handleChange = event => {
-    setSearchQuery(searchQuery);
-  };
+  const { query } = searchQuery;
 
   const onSubmit = async event => {
     event.preventDefault();
@@ -25,11 +22,12 @@ const SearchPage = ({ history }) => {
           <div class="tb">
             <div class="td">
               <input
+                name="query"
                 type="text"
-                placeholder={searchQuery}
+                // placeholder={searchQuery}
                 value={searchQuery}
                 required
-                handleChange={handleChange}
+                onChange={e => setSearchQuery(e.target.value)}
               />
             </div>
             <div class="td" id="s-cover">
