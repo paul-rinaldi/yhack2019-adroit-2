@@ -14,5 +14,15 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+export const fetchResultsAsync = async () => {
+  const resultRef = firestore.collection('results');
+  try {
+    const snapshot = await resultRef.get();
+    return snapshot;
+  } catch (error) {
+    console.log('Error getting documents', error);
+  }
+};
+
 export const firestore = firebase.firestore();
 export default firebase;
