@@ -1,45 +1,48 @@
-import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import style from './searchStyle.css';
+import React, { useState } from 'react';
+import { withRouter, Redirect } from 'react-router-dom';
 
-const SearchPage = () => {
-    const [values, setValues] = React.useState({
-        search: ''
-    });
-    const handleChange = name => event => {
-        setValues({ ...values, [name]: event.target.value });
-        console.log(values);
-    };
-    return (
-        <div>
-            <div id="cover">
-            <form onSubmit={(value) => handleChange('search')}>
-                <div class="tb">
-                <div class="td">
-                    <input type="text" placeholder="Jetblue" value="values.search" required />
-                </div>
-                <div class="td" id="s-cover">
-                    <button type="submit">
-                    <div id="s-circle"></div>
-                    <span></span>
-                    </button>
-                </div>
-                </div>
-            </form>
+import style from './searchStyle.css';
+import { fetchResultsAsync } from '../../components/firebase/firebase.util';
+
+const SearchPage = ({ history }) => {
+  const [searchQuery, setSearchQuery] = useState('Jetblue');
+  // const [redirect, setRedirect]
+
+  const handleChange = event => {
+    setSearchQuery(searchQuery);
+  };
+
+  const onSubmit = async event => {
+    event.preventDefault();
+    history.push('/results');
+    // search(searchQuery);
+  };
+
+  return (
+    <div>
+      <div id="cover">
+        <form onSubmit={onSubmit}>
+          <div class="tb">
+            <div class="td">
+              <input
+                type="text"
+                placeholder={searchQuery}
+                value={searchQuery}
+                required
+                handleChange={handleChange}
+              />
             </div>
-            <form>
-            <TextField 
-                id="filled-search"
-                label="Find negative sentiments about... "
-                value={values.search}
-                onChange={handleChange('search')}
-                margin="normal"
-                variant="filled"
-                style={style}
-            />
-            </form>
-        </div>
-    ); 
+            <div class="td" id="s-cover">
+              <button type="submit">
+                <div id="s-circle"></div>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 };
 
-export default SearchPage;
+export default withRouter(SearchPage);
