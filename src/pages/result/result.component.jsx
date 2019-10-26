@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
+import ThumbUpIcon from '@material-ui/icons/ThumbUpTwoTone';
+import ThumbDownIcon from '@material-ui/icons/ThumbDownTwoTone';
 import Grid from '@material-ui/core/Grid';
 
 const ResultItem = styled.div`
@@ -49,7 +51,9 @@ const ResultPage = ({ history }) => {
         <Header onClick={() => history.push('/')}>Back</Header>
 
         <ResultList>
-          {generate(<ResultItem>Single line item </ResultItem>)}
+          {generate(<ResultItem>Single line item 
+            <ThumbUpIcon color="primary" style={{'left':'0'}}/>
+            <ThumbDownIcon color="secondary" style={{'right':'0'}}/></ResultItem>)}
         </ResultList>
       </Grid>
     </Grid>
