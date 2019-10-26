@@ -10,7 +10,7 @@ body {
 
 body {
   margin: 0;
-  background-color: dodgerblue;
+  background-color: #d3d3d3;
 }
 
 .tb {
@@ -41,9 +41,10 @@ button {
   width: 550px;
   padding: 35px;
   margin: -83px auto 0 auto;
-  background-color: #ff7575;
+  background-color: #003876;
+
   border-radius: 20px;
-  box-shadow: 0 10px 40px #ff7c7c, 0 0 0 20px #ffffffeb;
+  box-shadow: 0 10px 40px #000d1b, 0 0 0 20px #ffffff;
   transform: scale(0.6);
 }
 

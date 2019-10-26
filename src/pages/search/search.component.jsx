@@ -5,7 +5,7 @@ import style from './searchStyle.css';
 import { fetchResultsAsync } from '../../components/firebase/firebase.util';
 
 const SearchPage = ({ history }) => {
-  const [searchQuery, setSearchQuery] = useState('Jetblue');
+  const [searchQuery, setSearchQuery] = useState('jetBlue');
   // const [redirect, setRedirect]
   const { query } = searchQuery;
 
