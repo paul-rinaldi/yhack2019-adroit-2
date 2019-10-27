@@ -26,7 +26,7 @@ const CountLabel = styled.span`
 
 const CountInput = styled.input`
   font-size: 1.7em;
-  width: 2em;
+  width: 2.5em;
   margin-left: 0.4em;
   color: #003876;
 `;
