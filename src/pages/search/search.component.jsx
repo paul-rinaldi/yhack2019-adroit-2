@@ -9,6 +9,14 @@ const Banner = styled.div`
   text-align: center;
   color: white;
   text-shadow: 0 6px 20px #888888;
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+  transition: 0.3s;
+  &:hover {
+    font-size: 16em;
+  }
 `;
 
 const CountContainer = styled.div`
