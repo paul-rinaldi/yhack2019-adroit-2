@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
-
-import style from './searchStyle.css';
+import './searchStyle.css';
 
 const SearchPage = ({ history }) => {
   const [searchQuery, setSearchQuery] = useState('jetBlue');
-  // const [redirect, setRedirect]
 
   const onSubmit = async event => {
     event.preventDefault();
     history.push({
       pathname: '/results',
-      state: { query: searchQuery }
+      state: {
+        query: searchQuery,
+        count: 10
+      }
     });
-    // search(searchQuery);
   };
 
   return (

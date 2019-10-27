@@ -3,16 +3,7 @@ import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import Spinner from '../../components/spinner/spinner.component';
-import ThumbUpIcon from '@material-ui/icons/ThumbUpTwoTone';
-import ThumbDownIcon from '@material-ui/icons/ThumbDownTwoTone';
-
-const ResultItem = styled.div`
-  background-color: white;
-  border-radius: 6px;
-  color: black;
-  margin: 0 1em 1em;
-  padding: 2em 1em;
-`;
+import ResultItem from '../../components/result/result-item.component';
 
 const SearchButton = styled.button`
   background-color: #003876;
@@ -26,17 +17,19 @@ const SearchButton = styled.button`
   &:hover {
     background-color: #0e75eb;
   }
+
+  box-shadow: 2px 2px 5px #000000;
 `;
 
 const ResultPage = ({ history, location }) => {
-  const [results, setResults] = useState({ sentiments: [] });
+  const [results, setResults] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-
-  const API = 'http://digit42.pythonanywhere.com/?query=';
-  const QUERY = location.state.query;
 
   useEffect(() => {
     const fetchData = async () => {
+      const API = 'http://digit42.pythonanywhere.com/?';
+      const QUERY = 'query=' + location.state.query;
+      const COUNT = '&count=' + location.state.count;
       const config = {
         method: 'GET',
         mode: 'no-cors',
@@ -45,9 +38,9 @@ const ResultPage = ({ history, location }) => {
           'Content-Type': 'application/json'
         }
       };
-      const response = await axios.get(API + QUERY, config);
+      const response = await axios.get(API + QUERY + COUNT, config);
       const json = response.data;
-      setResults({ sentiments: json });
+      setResults(json);
       setIsLoading(false);
     };
     fetchData();
@@ -61,14 +54,9 @@ const ResultPage = ({ history, location }) => {
       {isLoading ? (
         <Spinner />
       ) : (
-        results.sentiments.map(({ review, score }) => (
-          <ResultItem>
-            {review}
-            {score}
-            <ThumbUpIcon color="primarykey" />
-            <ThumbDownIcon color="secondary" />
-          </ResultItem>
-        ))
+        results.sentiments
+          .sort((a, b) => (a.score > b.score ? 1 : -1))
+          .map((item, index) => <ResultItem key={index} item={item} />)
       )}
     </div>
   );
