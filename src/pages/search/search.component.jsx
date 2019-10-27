@@ -7,11 +7,13 @@ import { fetchResultsAsync } from '../../components/firebase/firebase.util';
 const SearchPage = ({ history }) => {
   const [searchQuery, setSearchQuery] = useState('jetBlue');
   // const [redirect, setRedirect]
-  const { query } = searchQuery;
 
   const onSubmit = async event => {
     event.preventDefault();
-    history.push('/results');
+    history.push({
+      pathname: '/results',
+      state: { query: searchQuery }
+    });
     // search(searchQuery);
   };
 
