@@ -34,12 +34,23 @@ button {
 }
 
 #cover {
+<<<<<<< Updated upstream:src/pages/search/style.css
+=======
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+>>>>>>> Stashed changes:src/pages/search/searchStyle.css
   width: 550px;
   padding: 35px;
   margin: -83px auto auto;
   background-color: #003876;
   border-radius: 20px;
+<<<<<<< Updated upstream:src/pages/search/style.css
   box-shadow: 0 10px 30px #011b36, 0 0 0 25px white;
+=======
+  box-shadow: 0 10px 40px #042f5e, 0 0 0 30px white;
+>>>>>>> Stashed changes:src/pages/search/searchStyle.css
   transform: scale(0.6);
 }
 @media (max-width: 500px) {

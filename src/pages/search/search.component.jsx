@@ -20,7 +20,7 @@ const Banner = styled.div`
   }
   @media (max-width: 500px) {
     font-size: 8em;
-      margin-bottom: 1em;
+    margin-bottom: 1em;
   }
 }
 `;
