@@ -8,6 +8,7 @@ const ResultItemContainer = styled.div`
   color: black;
   margin: 0 1em 1em;
   padding: 2em 1em 1em;
+  box-shadow: 0 4px 10px #888888;
 `;
 
 const Review = styled.div`
@@ -16,7 +17,7 @@ const Review = styled.div`
 
 const Score = styled.div`
   margin-top: 0.5em;
-  text-align: center;
+  text-align: right;
 `;
 
 const ResultItem = ({ item }) => {
@@ -34,7 +35,7 @@ const ResultItem = ({ item }) => {
     <ResultItemContainer>
       <Review>{review}</Review>
       <Line percent={adjustedScore} strokeWidth="1" strokeColor={color} />
-      <Score>{adjustedScore}%</Score>
+      <Score>Negativity: {adjustedScore}%</Score>
     </ResultItemContainer>
   );
 };

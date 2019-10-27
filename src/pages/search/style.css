@@ -5,7 +5,7 @@
 html,
 body {
   height: 100%;
-  )min-height: 100%;
+  min-height: 100%;
 }
 
 body {
@@ -35,7 +35,7 @@ button {
 
 #cover {
   position: absolute;
-  top: 50%;
+  top: 63%;
   left: 0;
   right: 0;
   width: 550px;
@@ -43,7 +43,7 @@ button {
   margin: -83px auto 0 auto;
   background-color: #003876;
   border-radius: 20px;
-  box-shadow: 0 10px 40px #000d1b, 0 0 0 20px white;
+  box-shadow: 0 10px 30px #011b36, 0 0 0 20px white;
   transform: scale(0.6);
 }
 

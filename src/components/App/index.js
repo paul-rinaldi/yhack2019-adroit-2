@@ -7,6 +7,9 @@ import ResultPage from '../../pages/result/result.component';
 
 const StyleWrapper = styled.div`
   font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  width: 90vw;
+  margin: auto;
 `;
 
 const App = () => (
