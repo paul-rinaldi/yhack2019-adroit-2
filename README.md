@@ -1,3 +1,44 @@
+## Inspiration
+Yearning to arrive at a problem that crosses multiple hackathon themes, that we understand, and that would impact society largely left us thinking hard and long on Friday night because we simply did not have much research, experience, or knowledge in these fields...
+
+How would we create a solution to a problem we don’t understand?
+
+This question sparked the idea of using natural language processing to analyze frustrations, complaints, and praises -- a sort of human centered design!
+We began designing a way to provide hackathoners and businesses with problem statements so they can focus on what they do best.
+
+The time was ticking on the first night as we wrote up user stories to achieve the critical part of that solution: analyzing broken English and
+
+So we sought to create an MVP that would challenge us to grow in skills and frameworks we have not learned yet _while_ also creating something useful to @jetBlue and our aim of machinery for human-centered design. So we developed the Business Brand Barometer V1.0!
+
+jetBlue challenge:
+Hypothesis: Aggregating top-ranked complaints from social media will point to services that may need attention.
+Insights: Rating of neg/pos message about jetBlue
+Proof of Hypothesis:
+Areas of Recommendation: Cross analyze NLP results from Twitter with User Feedback
+
+## What it does
+By sending a GET with a query parameter at the database's URL, the backend queries twitter to search for the specified term with some specification to provide more accurate results. The backend then utilizes natural language processing to create a list of top customer concerns.
+
+This is the Critical Business Brand Barometer!
+
+## How we built it
+PythonAnywhere with hosted on a server with Google Cloud Language (NLP), Client using ReactJS, Bootstrap, Material UI, and Axios.
+
+## Challenges we ran into
+React package management, language versioning, string JSON formatted with ‘’ and “”
+
+## Accomplishments that we're proud of
+With little experience and all being first-time MLH hackers, we're proud of
+the integration of the frontend with the backend, figuring out new languages, and creating a demo.
+
+## What we learned
+New languages, creating and making API calls, limitations of NLP, how to work with people you’ve just met
+
+## What's next for Adroit
+Bettering the algorithms and NLP, analyze the target of negative sentiment, twist complaints into problem statements, aggregate data into a summary for clients.
+
+BETA feature: Showing the top ten queries
+--------------------------------------------------------------------------------------------------------------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
