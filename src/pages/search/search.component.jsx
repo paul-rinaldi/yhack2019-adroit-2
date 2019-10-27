@@ -5,6 +5,7 @@ import './style.css';
 
 const Banner = styled.div`
   margin-top: 17vh;
+  margin-bottom: 0.5em;
   font-size: 15em;
   text-align: center;
   color: white;
@@ -20,20 +21,19 @@ const Banner = styled.div`
 `;
 
 const CountContainer = styled.div`
-  position: absolute;
-  top: 72%;
-  left: 37%;
   display: flex;
   align-items: center;
+  justify-content: center;
   text-shadow: 0 2px 2px #888888;
 `;
 
 const CountLabel = styled.span`
   color: white;
+  font-size: 1.1em;
 `;
 
 const CountInput = styled.input`
-  font-size: 1.7em;
+  font-size: 1.5em;
   width: 2.5em;
   margin-left: 0.4em;
   color: #003876;

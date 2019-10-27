@@ -34,10 +34,6 @@ button {
 }
 
 #cover {
-  position: absolute;
-  top: 63%;
-  left: 0;
-  right: 0;
   width: 550px;
   padding: 35px;
   margin: -83px auto 0 auto;

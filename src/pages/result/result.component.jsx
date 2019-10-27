@@ -49,7 +49,7 @@ const ResultPage = ({ history, location }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const API = 'http://digit42.pythonanywhere.com/?';
+      const API = 'https://digit42.pythonanywhere.com/?';
       const QUERY = 'query=' + location.state.query;
       const COUNT = '&count=' + location.state.count;
       const config = {
