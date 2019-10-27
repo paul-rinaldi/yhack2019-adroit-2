@@ -1,3 +1,4 @@
+# Project Description 
 ## Inspiration
 Yearning to arrive at a problem that crosses multiple hackathon themes, that we understand, and that would impact society largely left us thinking hard and long on Friday night because we simply did not have much research, experience, or knowledge in these fields...
 
@@ -39,6 +40,8 @@ Bettering the algorithms and NLP, analyze the target of negative sentiment, twis
 
 BETA feature: Showing the top ten queries
 --------------------------------------------------------------------------------------------------------------------------------------
+# Software Details
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
