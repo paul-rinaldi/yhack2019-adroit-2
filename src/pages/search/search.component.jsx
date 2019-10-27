@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { withRouter, Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import style from './searchStyle.css';
-import { fetchResultsAsync } from '../../components/firebase/firebase.util';
 
 const SearchPage = ({ history }) => {
   const [searchQuery, setSearchQuery] = useState('jetBlue');
@@ -21,8 +20,8 @@ const SearchPage = ({ history }) => {
     <div>
       <div id="cover">
         <form onSubmit={onSubmit}>
-          <div class="tb">
-            <div class="td">
+          <div className="tb">
+            <div className="td">
               <input
                 name="query"
                 type="text"
@@ -32,7 +31,7 @@ const SearchPage = ({ history }) => {
                 onChange={e => setSearchQuery(e.target.value)}
               />
             </div>
-            <div class="td" id="s-cover">
+            <div className="td" id="s-cover">
               <button type="submit">
                 <div id="s-circle"></div>
                 <span></span>

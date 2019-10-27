@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
-import { Container } from 'react-bootstrap';
+import Spinner from '../../components/spinner/spinner.component';
 import ThumbUpIcon from '@material-ui/icons/ThumbUpTwoTone';
 import ThumbDownIcon from '@material-ui/icons/ThumbDownTwoTone';
 
@@ -17,14 +17,20 @@ const ResultItem = styled.div`
 const SearchButton = styled.button`
   background-color: #003876;
   margin: 2em auto;
-  border-radius: 6px;
+  border-radius: 5px;
   font-size: 1em;
   width: 10em;
   height: 3em;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #0e75eb;
+  }
 `;
 
 const ResultPage = ({ history, location }) => {
   const [results, setResults] = useState({ sentiments: [] });
+  const [isLoading, setIsLoading] = useState(true);
 
   const API = 'http://digit42.pythonanywhere.com/?query=';
   const QUERY = location.state.query;
@@ -42,25 +48,29 @@ const ResultPage = ({ history, location }) => {
       const response = await axios.get(API + QUERY, config);
       const json = response.data;
       setResults({ sentiments: json });
+      setIsLoading(false);
     };
     fetchData();
   }, []);
 
   return (
-    <Container>
+    <div>
       <SearchButton onClick={() => history.push('/')}>
         Search Again
       </SearchButton>
-
-      {results.sentiments.map(({ review, score }) => (
-        <ResultItem>
-          {review}
-          {score}
-          <ThumbUpIcon color="primarykey" />
-          <ThumbDownIcon color="secondary" />
-        </ResultItem>
-      ))}
-    </Container>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        results.sentiments.map(({ review, score }) => (
+          <ResultItem>
+            {review}
+            {score}
+            <ThumbUpIcon color="primarykey" />
+            <ThumbDownIcon color="secondary" />
+          </ResultItem>
+        ))
+      )}
+    </div>
   );
 };
 
