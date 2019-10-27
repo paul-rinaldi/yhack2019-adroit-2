@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import './style.css';
 
 const Banner = styled.div`
-  margin-top: 17vh;
+  margin-top: 8vh;
   margin-bottom: 0.5em;
   font-size: 15em;
   text-align: center;
@@ -18,6 +18,11 @@ const Banner = styled.div`
   &:hover {
     font-size: 16em;
   }
+  @media (max-width: 500px) {
+    font-size: 8em;
+      margin-bottom: 1em;
+  }
+}
 `;
 
 const CountContainer = styled.div`
@@ -30,6 +35,7 @@ const CountContainer = styled.div`
 const CountLabel = styled.span`
   color: white;
   font-size: 1.1em;
+  padding-left: 2em;
 `;
 
 const CountInput = styled.input`

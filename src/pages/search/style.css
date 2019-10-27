@@ -36,11 +36,16 @@ button {
 #cover {
   width: 550px;
   padding: 35px;
-  margin: -83px auto 0 auto;
+  margin: -83px auto auto;
   background-color: #003876;
   border-radius: 20px;
   box-shadow: 0 10px 30px #011b36, 0 0 0 25px white;
   transform: scale(0.6);
+}
+@media (max-width: 500px) {
+  #cover {
+    width: 320px;
+  }
 }
 
 form {
